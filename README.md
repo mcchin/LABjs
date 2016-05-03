@@ -1,3 +1,25 @@
+NOTE: I have forked this from the original author getify/LABjs to include a small hack for my project. I just want to capture loading error when a specific file is not loaded.
+
+```html
+    <script>
+        $LAB
+        .setOptions({
+            AlwaysPreserveOrder:true,
+            loadError: function() { // Optional
+                // Handle loading error
+            },
+            timeout: 30000 // Optional - How much time you expect all the scripts to fully loaded? if not will execute loadError
+        })
+        .script('file1.js')
+        .script('file2.js')
+        .script('file3.js')
+        .script('file4.js')
+        .wait(function() {
+            // Do something when all four files are loaded
+        });
+    </script>
+```
+
 LABjs (Loading And Blocking JavaScript)
 =======================================
 
